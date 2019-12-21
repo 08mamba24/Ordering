@@ -1,4 +1,4 @@
-package cn.edu.njust.ordering;
+package cn.edu.njust.main;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
