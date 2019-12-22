@@ -1,13 +1,11 @@
 package cn.edu.njust.main.model;
 
-import java.util.Date;
-
 public class Setting {
     private Integer id;
 
     private Integer tableNumber;
 
-    private Date todayLatestReserveTime;
+    private Integer todayLatestReserveTime;
 
     private Integer reserveSpan;
 
@@ -29,11 +27,11 @@ public class Setting {
         this.tableNumber = tableNumber;
     }
 
-    public Date getTodayLatestReserveTime() {
+    public Integer getTodayLatestReserveTime() {
         return todayLatestReserveTime;
     }
 
-    public void setTodayLatestReserveTime(Date todayLatestReserveTime) {
+    public void setTodayLatestReserveTime(Integer todayLatestReserveTime) {
         this.todayLatestReserveTime = todayLatestReserveTime;
     }
 

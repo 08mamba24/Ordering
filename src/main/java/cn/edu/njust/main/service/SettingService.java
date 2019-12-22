@@ -14,6 +14,6 @@ public class SettingService {
    private SettingMapper settingMapper;
 
     public Setting getSetting(){
-        return settingMapper.selectByPrimaryKey(1);
+        return settingMapper.selectByPrimaryKey(1);//插入id为1记录，方便调整基本参数
     }
 }

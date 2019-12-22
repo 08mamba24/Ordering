@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="cn.edu.njust.main.model.Setting">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="table_number" jdbcType="INTEGER" property="tableNumber" />
-    <result column="today_latest_reserve_time" jdbcType="TIME" property="todayLatestReserveTime" />
+    <result column="today_latest_reserve_time" jdbcType="INTEGER" property="todayLatestReserveTime" />
     <result column="reserve_span" jdbcType="INTEGER" property="reserveSpan" />
     <result column="person_per_table" jdbcType="INTEGER" property="personPerTable" />
   </resultMap>
@@ -103,7 +103,7 @@
   <insert id="insert" parameterType="cn.edu.njust.main.model.Setting">
     insert into setting (id, table_number, today_latest_reserve_time, 
       reserve_span, person_per_table)
-    values (#{id,jdbcType=INTEGER}, #{tableNumber,jdbcType=INTEGER}, #{todayLatestReserveTime,jdbcType=TIME}, 
+    values (#{id,jdbcType=INTEGER}, #{tableNumber,jdbcType=INTEGER}, #{todayLatestReserveTime,jdbcType=INTEGER}, 
       #{reserveSpan,jdbcType=INTEGER}, #{personPerTable,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.njust.main.model.Setting">
@@ -133,7 +133,7 @@
         #{tableNumber,jdbcType=INTEGER},
       </if>
       <if test="todayLatestReserveTime != null">
-        #{todayLatestReserveTime,jdbcType=TIME},
+        #{todayLatestReserveTime,jdbcType=INTEGER},
       </if>
       <if test="reserveSpan != null">
         #{reserveSpan,jdbcType=INTEGER},
@@ -159,7 +159,7 @@
         table_number = #{record.tableNumber,jdbcType=INTEGER},
       </if>
       <if test="record.todayLatestReserveTime != null">
-        today_latest_reserve_time = #{record.todayLatestReserveTime,jdbcType=TIME},
+        today_latest_reserve_time = #{record.todayLatestReserveTime,jdbcType=INTEGER},
       </if>
       <if test="record.reserveSpan != null">
         reserve_span = #{record.reserveSpan,jdbcType=INTEGER},
@@ -176,7 +176,7 @@
     update setting
     set id = #{record.id,jdbcType=INTEGER},
       table_number = #{record.tableNumber,jdbcType=INTEGER},
-      today_latest_reserve_time = #{record.todayLatestReserveTime,jdbcType=TIME},
+      today_latest_reserve_time = #{record.todayLatestReserveTime,jdbcType=INTEGER},
       reserve_span = #{record.reserveSpan,jdbcType=INTEGER},
       person_per_table = #{record.personPerTable,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -190,7 +190,7 @@
         table_number = #{tableNumber,jdbcType=INTEGER},
       </if>
       <if test="todayLatestReserveTime != null">
-        today_latest_reserve_time = #{todayLatestReserveTime,jdbcType=TIME},
+        today_latest_reserve_time = #{todayLatestReserveTime,jdbcType=INTEGER},
       </if>
       <if test="reserveSpan != null">
         reserve_span = #{reserveSpan,jdbcType=INTEGER},
@@ -204,7 +204,7 @@
   <update id="updateByPrimaryKey" parameterType="cn.edu.njust.main.model.Setting">
     update setting
     set table_number = #{tableNumber,jdbcType=INTEGER},
-      today_latest_reserve_time = #{todayLatestReserveTime,jdbcType=TIME},
+      today_latest_reserve_time = #{todayLatestReserveTime,jdbcType=INTEGER},
       reserve_span = #{reserveSpan,jdbcType=INTEGER},
       person_per_table = #{personPerTable,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}

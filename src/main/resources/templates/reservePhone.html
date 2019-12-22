@@ -49,12 +49,12 @@
         <form class="lockscreen-credentials" action="/check_phone" method="post">
             <div class="input-group">
 
-                <input name="phone" type="text" class="form-control" required placeholder="phoneNumber"
-                       oninput="checkPhone();">
+                <input id="phone" name="phone" type="text" class="form-control" required placeholder="phoneNumber"
+                       >
 
 
 
-                <button type="submit" class="btn" ><i class="fa fa-arrow-right text-muted"></i></button>
+                <button type="submit" class="btn" onclick="return checkPhone();" ><i class="fa fa-arrow-right text-muted"></i></button>
             </div>
         </form>
         <!-- /.lockscreen credentials -->
@@ -68,17 +68,25 @@
     <!--        <a href="#">Or sign in as a different user</a>-->
     <!--    </div>-->
     <div class="lockscreen-footer text-center">
-        Copyright &copy; 2019 <b><a href="https://adminlte.io" class="text-black">Zhang Yuhan</a></b><br>
+        Copyright &copy; 2019 <b><a href="https://https://github.com/08mamba24/ordering" class="text-black">Zhang Yuhan</a></b><br>
         All rights reserved
     </div>
 </div>
 <!-- /.center -->
 <script>
     function checkPhone(){
-        var phone = document.getElementById('phone').value;
-        if(!(/^1[3456789]\d{9}$/.test(phone))){
-            alert("手机号码有误，请重填");
+        // var phone = document.getElementById('phone').value;
+        // if(!(/^1[3456789]\d{9}$/.test(phone))){
+        //     alert("手机号码有误，请重填");
+        //     return false;
+        // }
+        var myreg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
+        if (!myreg.test($("#phone").val())) {
+            alert('手机号格式不正确');
             return false;
+        } else {
+            alert('手机号格式正确')
+            return true;
         }
     }
 </script>

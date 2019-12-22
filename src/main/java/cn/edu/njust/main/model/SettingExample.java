@@ -1,8 +1,6 @@
 package cn.edu.njust.main.model;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 public class SettingExample {
@@ -104,32 +102,6 @@ public class SettingExample {
                 throw new RuntimeException("Between values for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value1, value2));
-        }
-
-        protected void addCriterionForJDBCTime(String condition, Date value, String property) {
-            if (value == null) {
-                throw new RuntimeException("Value for " + property + " cannot be null");
-            }
-            addCriterion(condition, new java.sql.Time(value.getTime()), property);
-        }
-
-        protected void addCriterionForJDBCTime(String condition, List<Date> values, String property) {
-            if (values == null || values.size() == 0) {
-                throw new RuntimeException("Value list for " + property + " cannot be null or empty");
-            }
-            List<java.sql.Time> timeList = new ArrayList<java.sql.Time>();
-            Iterator<Date> iter = values.iterator();
-            while (iter.hasNext()) {
-                timeList.add(new java.sql.Time(iter.next().getTime()));
-            }
-            addCriterion(condition, timeList, property);
-        }
-
-        protected void addCriterionForJDBCTime(String condition, Date value1, Date value2, String property) {
-            if (value1 == null || value2 == null) {
-                throw new RuntimeException("Between values for " + property + " cannot be null");
-            }
-            addCriterion(condition, new java.sql.Time(value1.getTime()), new java.sql.Time(value2.getTime()), property);
         }
 
         public Criteria andIdIsNull() {
@@ -262,53 +234,53 @@ public class SettingExample {
             return (Criteria) this;
         }
 
-        public Criteria andTodayLatestReserveTimeEqualTo(Date value) {
-            addCriterionForJDBCTime("today_latest_reserve_time =", value, "todayLatestReserveTime");
+        public Criteria andTodayLatestReserveTimeEqualTo(Integer value) {
+            addCriterion("today_latest_reserve_time =", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andTodayLatestReserveTimeNotEqualTo(Date value) {
-            addCriterionForJDBCTime("today_latest_reserve_time <>", value, "todayLatestReserveTime");
+        public Criteria andTodayLatestReserveTimeNotEqualTo(Integer value) {
+            addCriterion("today_latest_reserve_time <>", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andTodayLatestReserveTimeGreaterThan(Date value) {
-            addCriterionForJDBCTime("today_latest_reserve_time >", value, "todayLatestReserveTime");
+        public Criteria andTodayLatestReserveTimeGreaterThan(Integer value) {
+            addCriterion("today_latest_reserve_time >", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andTodayLatestReserveTimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCTime("today_latest_reserve_time >=", value, "todayLatestReserveTime");
+        public Criteria andTodayLatestReserveTimeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("today_latest_reserve_time >=", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andTodayLatestReserveTimeLessThan(Date value) {
-            addCriterionForJDBCTime("today_latest_reserve_time <", value, "todayLatestReserveTime");
+        public Criteria andTodayLatestReserveTimeLessThan(Integer value) {
+            addCriterion("today_latest_reserve_time <", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andTodayLatestReserveTimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCTime("today_latest_reserve_time <=", value, "todayLatestReserveTime");
+        public Criteria andTodayLatestReserveTimeLessThanOrEqualTo(Integer value) {
+            addCriterion("today_latest_reserve_time <=", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andTodayLatestReserveTimeIn(List<Date> values) {
-            addCriterionForJDBCTime("today_latest_reserve_time in", values, "todayLatestReserveTime");
+        public Criteria andTodayLatestReserveTimeIn(List<Integer> values) {
+            addCriterion("today_latest_reserve_time in", values, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andTodayLatestReserveTimeNotIn(List<Date> values) {
-            addCriterionForJDBCTime("today_latest_reserve_time not in", values, "todayLatestReserveTime");
+        public Criteria andTodayLatestReserveTimeNotIn(List<Integer> values) {
+            addCriterion("today_latest_reserve_time not in", values, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andTodayLatestReserveTimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCTime("today_latest_reserve_time between", value1, value2, "todayLatestReserveTime");
+        public Criteria andTodayLatestReserveTimeBetween(Integer value1, Integer value2) {
+            addCriterion("today_latest_reserve_time between", value1, value2, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andTodayLatestReserveTimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCTime("today_latest_reserve_time not between", value1, value2, "todayLatestReserveTime");
+        public Criteria andTodayLatestReserveTimeNotBetween(Integer value1, Integer value2) {
+            addCriterion("today_latest_reserve_time not between", value1, value2, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
