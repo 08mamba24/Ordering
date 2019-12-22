@@ -1,8 +1,8 @@
-package com.edu.njust.main.model;
+package cn.edu.njust.main.model;
 
 import java.util.Date;
 
-public class Order {
+public class Tableone {
     private Integer id;
 
     private String phoneNumber;
@@ -10,6 +10,8 @@ public class Order {
     private Date date;
 
     private Integer headCount;
+
+    private Integer wantShare;
 
     public Integer getId() {
         return id;
@@ -41,5 +43,13 @@ public class Order {
 
     public void setHeadCount(Integer headCount) {
         this.headCount = headCount;
+    }
+
+    public Integer getWantShare() {
+        return wantShare;
+    }
+
+    public void setWantShare(Integer wantShare) {
+        this.wantShare = wantShare;
     }
 }

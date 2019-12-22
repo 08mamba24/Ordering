@@ -1,18 +1,18 @@
-package com.edu.njust.main.model;
+package cn.edu.njust.main.model;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class OrderExample {
+public class SettingExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public OrderExample() {
+    public SettingExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -106,30 +106,30 @@ public class OrderExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        protected void addCriterionForJDBCDate(String condition, Date value, String property) {
+        protected void addCriterionForJDBCTime(String condition, Date value, String property) {
             if (value == null) {
                 throw new RuntimeException("Value for " + property + " cannot be null");
             }
-            addCriterion(condition, new java.sql.Date(value.getTime()), property);
+            addCriterion(condition, new java.sql.Time(value.getTime()), property);
         }
 
-        protected void addCriterionForJDBCDate(String condition, List<Date> values, String property) {
+        protected void addCriterionForJDBCTime(String condition, List<Date> values, String property) {
             if (values == null || values.size() == 0) {
                 throw new RuntimeException("Value list for " + property + " cannot be null or empty");
             }
-            List<java.sql.Date> dateList = new ArrayList<java.sql.Date>();
+            List<java.sql.Time> timeList = new ArrayList<java.sql.Time>();
             Iterator<Date> iter = values.iterator();
             while (iter.hasNext()) {
-                dateList.add(new java.sql.Date(iter.next().getTime()));
+                timeList.add(new java.sql.Time(iter.next().getTime()));
             }
-            addCriterion(condition, dateList, property);
+            addCriterion(condition, timeList, property);
         }
 
-        protected void addCriterionForJDBCDate(String condition, Date value1, Date value2, String property) {
+        protected void addCriterionForJDBCTime(String condition, Date value1, Date value2, String property) {
             if (value1 == null || value2 == null) {
                 throw new RuntimeException("Between values for " + property + " cannot be null");
             }
-            addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
+            addCriterion(condition, new java.sql.Time(value1.getTime()), new java.sql.Time(value2.getTime()), property);
         }
 
         public Criteria andIdIsNull() {
@@ -192,193 +192,243 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberIsNull() {
-            addCriterion("phone_number is null");
+        public Criteria andTableNumberIsNull() {
+            addCriterion("table_number is null");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberIsNotNull() {
-            addCriterion("phone_number is not null");
+        public Criteria andTableNumberIsNotNull() {
+            addCriterion("table_number is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberEqualTo(String value) {
-            addCriterion("phone_number =", value, "phoneNumber");
+        public Criteria andTableNumberEqualTo(Integer value) {
+            addCriterion("table_number =", value, "tableNumber");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberNotEqualTo(String value) {
-            addCriterion("phone_number <>", value, "phoneNumber");
+        public Criteria andTableNumberNotEqualTo(Integer value) {
+            addCriterion("table_number <>", value, "tableNumber");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberGreaterThan(String value) {
-            addCriterion("phone_number >", value, "phoneNumber");
+        public Criteria andTableNumberGreaterThan(Integer value) {
+            addCriterion("table_number >", value, "tableNumber");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberGreaterThanOrEqualTo(String value) {
-            addCriterion("phone_number >=", value, "phoneNumber");
+        public Criteria andTableNumberGreaterThanOrEqualTo(Integer value) {
+            addCriterion("table_number >=", value, "tableNumber");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberLessThan(String value) {
-            addCriterion("phone_number <", value, "phoneNumber");
+        public Criteria andTableNumberLessThan(Integer value) {
+            addCriterion("table_number <", value, "tableNumber");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberLessThanOrEqualTo(String value) {
-            addCriterion("phone_number <=", value, "phoneNumber");
+        public Criteria andTableNumberLessThanOrEqualTo(Integer value) {
+            addCriterion("table_number <=", value, "tableNumber");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberLike(String value) {
-            addCriterion("phone_number like", value, "phoneNumber");
+        public Criteria andTableNumberIn(List<Integer> values) {
+            addCriterion("table_number in", values, "tableNumber");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberNotLike(String value) {
-            addCriterion("phone_number not like", value, "phoneNumber");
+        public Criteria andTableNumberNotIn(List<Integer> values) {
+            addCriterion("table_number not in", values, "tableNumber");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberIn(List<String> values) {
-            addCriterion("phone_number in", values, "phoneNumber");
+        public Criteria andTableNumberBetween(Integer value1, Integer value2) {
+            addCriterion("table_number between", value1, value2, "tableNumber");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberNotIn(List<String> values) {
-            addCriterion("phone_number not in", values, "phoneNumber");
+        public Criteria andTableNumberNotBetween(Integer value1, Integer value2) {
+            addCriterion("table_number not between", value1, value2, "tableNumber");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberBetween(String value1, String value2) {
-            addCriterion("phone_number between", value1, value2, "phoneNumber");
+        public Criteria andTodayLatestReserveTimeIsNull() {
+            addCriterion("today_latest_reserve_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumberNotBetween(String value1, String value2) {
-            addCriterion("phone_number not between", value1, value2, "phoneNumber");
+        public Criteria andTodayLatestReserveTimeIsNotNull() {
+            addCriterion("today_latest_reserve_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDateIsNull() {
-            addCriterion("date is null");
+        public Criteria andTodayLatestReserveTimeEqualTo(Date value) {
+            addCriterionForJDBCTime("today_latest_reserve_time =", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andDateIsNotNull() {
-            addCriterion("date is not null");
+        public Criteria andTodayLatestReserveTimeNotEqualTo(Date value) {
+            addCriterionForJDBCTime("today_latest_reserve_time <>", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andDateEqualTo(Date value) {
-            addCriterionForJDBCDate("date =", value, "date");
+        public Criteria andTodayLatestReserveTimeGreaterThan(Date value) {
+            addCriterionForJDBCTime("today_latest_reserve_time >", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andDateNotEqualTo(Date value) {
-            addCriterionForJDBCDate("date <>", value, "date");
+        public Criteria andTodayLatestReserveTimeGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCTime("today_latest_reserve_time >=", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andDateGreaterThan(Date value) {
-            addCriterionForJDBCDate("date >", value, "date");
+        public Criteria andTodayLatestReserveTimeLessThan(Date value) {
+            addCriterionForJDBCTime("today_latest_reserve_time <", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andDateGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("date >=", value, "date");
+        public Criteria andTodayLatestReserveTimeLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCTime("today_latest_reserve_time <=", value, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andDateLessThan(Date value) {
-            addCriterionForJDBCDate("date <", value, "date");
+        public Criteria andTodayLatestReserveTimeIn(List<Date> values) {
+            addCriterionForJDBCTime("today_latest_reserve_time in", values, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andDateLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("date <=", value, "date");
+        public Criteria andTodayLatestReserveTimeNotIn(List<Date> values) {
+            addCriterionForJDBCTime("today_latest_reserve_time not in", values, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andDateIn(List<Date> values) {
-            addCriterionForJDBCDate("date in", values, "date");
+        public Criteria andTodayLatestReserveTimeBetween(Date value1, Date value2) {
+            addCriterionForJDBCTime("today_latest_reserve_time between", value1, value2, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andDateNotIn(List<Date> values) {
-            addCriterionForJDBCDate("date not in", values, "date");
+        public Criteria andTodayLatestReserveTimeNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCTime("today_latest_reserve_time not between", value1, value2, "todayLatestReserveTime");
             return (Criteria) this;
         }
 
-        public Criteria andDateBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("date between", value1, value2, "date");
+        public Criteria andReserveSpanIsNull() {
+            addCriterion("reserve_span is null");
             return (Criteria) this;
         }
 
-        public Criteria andDateNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("date not between", value1, value2, "date");
+        public Criteria andReserveSpanIsNotNull() {
+            addCriterion("reserve_span is not null");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountIsNull() {
-            addCriterion("head_count is null");
+        public Criteria andReserveSpanEqualTo(Integer value) {
+            addCriterion("reserve_span =", value, "reserveSpan");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountIsNotNull() {
-            addCriterion("head_count is not null");
+        public Criteria andReserveSpanNotEqualTo(Integer value) {
+            addCriterion("reserve_span <>", value, "reserveSpan");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountEqualTo(Integer value) {
-            addCriterion("head_count =", value, "headCount");
+        public Criteria andReserveSpanGreaterThan(Integer value) {
+            addCriterion("reserve_span >", value, "reserveSpan");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountNotEqualTo(Integer value) {
-            addCriterion("head_count <>", value, "headCount");
+        public Criteria andReserveSpanGreaterThanOrEqualTo(Integer value) {
+            addCriterion("reserve_span >=", value, "reserveSpan");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountGreaterThan(Integer value) {
-            addCriterion("head_count >", value, "headCount");
+        public Criteria andReserveSpanLessThan(Integer value) {
+            addCriterion("reserve_span <", value, "reserveSpan");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountGreaterThanOrEqualTo(Integer value) {
-            addCriterion("head_count >=", value, "headCount");
+        public Criteria andReserveSpanLessThanOrEqualTo(Integer value) {
+            addCriterion("reserve_span <=", value, "reserveSpan");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountLessThan(Integer value) {
-            addCriterion("head_count <", value, "headCount");
+        public Criteria andReserveSpanIn(List<Integer> values) {
+            addCriterion("reserve_span in", values, "reserveSpan");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountLessThanOrEqualTo(Integer value) {
-            addCriterion("head_count <=", value, "headCount");
+        public Criteria andReserveSpanNotIn(List<Integer> values) {
+            addCriterion("reserve_span not in", values, "reserveSpan");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountIn(List<Integer> values) {
-            addCriterion("head_count in", values, "headCount");
+        public Criteria andReserveSpanBetween(Integer value1, Integer value2) {
+            addCriterion("reserve_span between", value1, value2, "reserveSpan");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountNotIn(List<Integer> values) {
-            addCriterion("head_count not in", values, "headCount");
+        public Criteria andReserveSpanNotBetween(Integer value1, Integer value2) {
+            addCriterion("reserve_span not between", value1, value2, "reserveSpan");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountBetween(Integer value1, Integer value2) {
-            addCriterion("head_count between", value1, value2, "headCount");
+        public Criteria andPersonPerTableIsNull() {
+            addCriterion("person_per_table is null");
             return (Criteria) this;
         }
 
-        public Criteria andHeadCountNotBetween(Integer value1, Integer value2) {
-            addCriterion("head_count not between", value1, value2, "headCount");
+        public Criteria andPersonPerTableIsNotNull() {
+            addCriterion("person_per_table is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonPerTableEqualTo(Integer value) {
+            addCriterion("person_per_table =", value, "personPerTable");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonPerTableNotEqualTo(Integer value) {
+            addCriterion("person_per_table <>", value, "personPerTable");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonPerTableGreaterThan(Integer value) {
+            addCriterion("person_per_table >", value, "personPerTable");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonPerTableGreaterThanOrEqualTo(Integer value) {
+            addCriterion("person_per_table >=", value, "personPerTable");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonPerTableLessThan(Integer value) {
+            addCriterion("person_per_table <", value, "personPerTable");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonPerTableLessThanOrEqualTo(Integer value) {
+            addCriterion("person_per_table <=", value, "personPerTable");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonPerTableIn(List<Integer> values) {
+            addCriterion("person_per_table in", values, "personPerTable");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonPerTableNotIn(List<Integer> values) {
+            addCriterion("person_per_table not in", values, "personPerTable");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonPerTableBetween(Integer value1, Integer value2) {
+            addCriterion("person_per_table between", value1, value2, "personPerTable");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonPerTableNotBetween(Integer value1, Integer value2) {
+            addCriterion("person_per_table not between", value1, value2, "personPerTable");
             return (Criteria) this;
         }
     }
